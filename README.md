@@ -1,5 +1,5 @@
-Cisco AnyConnect MacOS Toolbar
-==============================
+Cisco AnyConnect MacOS X Menubar
+================================
 
 Pretty MacOS X menu bar assets for Cisco AnyConnect Security Mobility Client.
 
