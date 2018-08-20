@@ -15,7 +15,7 @@ Install
 
 To install, you only have to:
 
-- Download the [assets in `Resources.zip`](https://github.com/rarylson/cisco-anyconnect-macos-toolbar/raw/master/Resources.zip);
+- Download the [assets in `Resources.zip`](https://github.com/rarylson/anyconnect-macosx-menubar/raw/master/Resources.zip);
 - Unzip these files;
 - Open Finder and Find `Cisco AnyConnect Secure Mobility Client.app`. It's probably in your Applications folder under a Cisco folder;
 - Right-click the application and select "Show Package Contents";
