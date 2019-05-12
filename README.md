@@ -30,14 +30,14 @@ To install, you only have to:
     ```sh
     wget https://github.com/rarylson/cisco-anyconnect-macos-toolbar/raw/master/Resources.zip
     ```
-- Assuming that your Cisco AnyConnect Secure Mobility Client app is in `/Applications/Cisco`, and you've downloaded `Resources.zip` to `~/Downloads`, you can just run this:
+- Assuming that your Cisco AnyConnect Secure Mobility Client app is in `/Applications/Cisco`, and you've downloaded `Resources.zip` to the current directory, you can just run:
     ```sh
-    sudo unzip -j -d '/Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app/Contents/Resources/' ~/Downloads/Resources.zip
+    sudo unzip -d '/Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app/Contents/Resources/' Resources.zip
     ```
 
 ### Caveats
 
-- This doesn't change the software, just puts some more images in the application's resource folder. f you plan on switching back to the previous menu bar icon, just delete the new images.
+- This doesn't change the software, just puts some more images in the application's resource folder. If you plan on switching back to the previous menu bar icon, just delete the new images.
 
 License
 -------
