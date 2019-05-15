@@ -1,7 +1,7 @@
 # Makefile
 
 PREFIX=/Applications
-VERSION=black
+VERSION=normal
 
 APP=$(PREFIX)/Cisco/Cisco AnyConnect Secure Mobility Client.app
 APP_RESOURCES=$(APP)/Contents/Resources
@@ -21,11 +21,11 @@ help:
 	@echo 'Usage:'
 	@echo
 	@echo '    make              run `make build`'
-	@echo '    make build        build `Resources.zip` and `Resources-White.zip` files'
+	@echo '    make build        build `Resources.zip` and `Resources-Dark.zip` files'
 	@echo '    make install      install assets in AnyConnect (default is `Resources.zip`,'
-	@echo '                      but you can use `make install VERSION=white` to install'
-	@echo '                      `Resources-White.zip`)'
-	@echo '    make uninstall    remove assets from AnyConnect'
+	@echo '                      but you can use `make install VERSION=dark` to install'
+	@echo '                      `Resources-Dark.zip`)'
+	@echo '    make uninstall    uninstall assets from AnyConnect'
 
 
 check-images:
@@ -39,17 +39,17 @@ Resources.zip:
 
 	BUILD=$(BUILD) BUILD_IMAGES=$(BUILD_IMAGES) BUILD_RESOURCES=$(BUILD_RESOURCES) \
 		IMAGES_PREFIX=$(IMAGES_PREFIX) \
-		bash $(ZIP_SCRIPT) Resources.zip black
+		bash $(ZIP_SCRIPT) Resources.zip normal
 
 
-Resources-White.zip:
+Resources-Dark.zip:
 
 	BUILD=$(BUILD) BUILD_IMAGES=$(BUILD_IMAGES) BUILD_RESOURCES=$(BUILD_RESOURCES) \
 		IMAGES_PREFIX=$(IMAGES_PREFIX) \
-		bash $(ZIP_SCRIPT) Resources-White.zip white
+		bash $(ZIP_SCRIPT) Resources-Dark.zip dark
 
 
-build: check-images Resources.zip Resources-White.zip
+build: check-images Resources.zip Resources-Dark.zip
 
 
 check_app_find_app=$(shell [[ -d "$(APP_RESOURCES)" ]] && echo "yes")
@@ -62,10 +62,10 @@ endif
 
 install: check-app
 
-ifeq ($(VERSION), black)
+ifeq ($(VERSION), normal)
 	unzip -d "$(APP_RESOURCES)" Resources.zip
-else ifeq ($(VERSION), white)
-	unzip -d "$(APP_RESOURCES)" Resources-White.zip
+else ifeq ($(VERSION), dark)
+	unzip -d "$(APP_RESOURCES)" Resources-Dark.zip
 else
 	$(error invalid version $(VERSION))
 endif
